@@ -41,7 +41,7 @@ Or using curl:
 ```bash
 curl http://localhost:80/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
 ```
-You should see a reponse:
+You should see a response:
 ```json
 {
     "user_predicted_tags":
