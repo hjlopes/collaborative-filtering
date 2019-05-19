@@ -9,7 +9,7 @@ from flask import jsonify
 logger = logging.getLogger(__name__)
 logger.setLevel('DEBUG')
 
-data_path = 'data/21B_tag_views_dataset.csv'
+data_path = '../data/21B_tag_views_dataset.csv'
 app = Flask("recommender_api")
 
 
@@ -74,5 +74,5 @@ def get_recommended_tags(user_id):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0', port=5151)
+    app.run(host='0.0.0.0', port=80)
 
