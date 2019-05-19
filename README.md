@@ -14,9 +14,9 @@ Install the requirements:
 pip install -r requirements.txt
 ```
 
-And run the in a dev enviroment:
+And run the in the _/app_ folder:
 ```bash
-python app/main.py
+python main.py
 ```
 ### Running with a docker container
 Requires that you have setup Docker and running. 
