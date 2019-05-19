@@ -2,3 +2,4 @@
 .idea
 *.iml
 
+/notebooks/.ipynb_checkpoints/
