@@ -37,32 +37,34 @@ There are two endpoints:
 - **/predict-tag/** to obtain the TOP 10 similar tags, given another tag;
 - **/predict-user/** to obtain the TOP 10 user recommended tags given a user id.
 
-Do a GET petition to the local URL through browser with the user_id as param:
+Do a GET petition to the local URL through browser with the user_id/tag_id as param:
 ```
-http://localhost:5000/recommend/<user_id>
+http://localhost:5000/predict-tag/<tag_id>
+http://localhost:5000/predict-user/<user_id>
 ```
+
 Example:
-http://localhost:5000/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
+http://localhost:5000/predict-tag/ff0d3fb21c00bc33f71187a2beec389e9eff5332
 
 Or using curl:
 ```bash
-curl http://localhost:5000/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
+curl http://lhttp://localhost:5000/predict-tag/ff0d3fb21c00bc33f71187a2beec389e9eff5332
 ```
 You should see a response:
 ```json
 {
-    "user_predicted_tags":
+    "predicted_tags":
     [
-        "642b8a4788b43df14fccc16ba2c926c1a42a736f",
-        "9f5cd26abfc96a97f8ee874d132c526a0fccb382",
-        "cf78455a9e99ea73476ba4fe54f395c1ed4205d2",
-        "3f736ea31dc289439c2868ef54b0fcb8ea3be3b9",
-        "17e899eebd1a5d51fb708c6afff76c03bcf1d635",
-        "03dd382ae49f2579667496e58e1686f7d9ad58ce",
-        "3e4d8d24daf15692515999d4c8809eac1a3ee55c",
-        "8f9cad3197bec0704f6d8f7817158eff7a10d86a",
-        "99d651ced09bfba1bf4345bc510e510853750ffc",
-        "29d400c6bada3de9543bcd931729848b5a95cdd6"
+        "7ee223009403f7450993fe5d79516f1fc841e75e",
+        "6b0cd6a8094daf42e766ea257a2af3571831bb32",
+        "bdf147e99ee57500eb2dabcbf3cfa24e1daef357",
+        "340f1eaf7ad0c07f1491338ab68cbcab30c315ec",
+        "c093b1743115b3f9d368b2f7bdf54f367afccc7c",
+        "61bc35a6401829bd28a8da47a2f235944ba8d2df",
+        "85ef93bda0f7fb6327bd1b5ad44da26246b4360d",
+        "dd3c8fd58366b577ce6b1d0f435602f11671c3dc",
+        "551ec41539d9fb71200d18ec7903b1039cde594f",
+        "ccc01cd0dd0becfcb86471efa1202f4a6c845545"
     ]
 }
 ```
