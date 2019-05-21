@@ -1,7 +1,12 @@
 # Collaborative filtering recommendation engine
-Simple Collaborative recommendation engine model for product similarity estimation.
+Simple Collaborative recommendation engine model for product similarity estimation. 
 
-The final model is based on item euclidean distance and can be deployed using the the Docker image.
+There are two endpoints: 
+- Item based collaborative filtering: the final model is based on item cosine distances;
+- User based collaborative filtering: the final model is based on item euclidean distance.
+
+Can be deployed using the Docker image.
+
 
 ## Requirements
 
@@ -24,22 +29,24 @@ Requires that you have setup Docker and running.
 Simple run the command to build and deploy:
 
 ```docker
-docker build -t recommender-image . && docker run -p 80:80 --name recommender recommender-image 
+docker build -t recommender-image . && docker run -p 5000:80 --name recommender recommender-image 
 ```
 
 ## Testing the application
-There is only one endpoint, **/recommend/**, to obtain the TOP 10 user recommended tags in JSON format.
+There are two endpoints:
+- **/predict-tag/** to obtain the TOP 10 similar tags, given another tag;
+- **/predict-user/** to obtain the TOP 10 user recommended tags given a user id.
 
 Do a GET petition to the local URL through browser with the user_id as param:
 ```
-http://localhost:80/recommend/<user_id>
+http://localhost:5000/recommend/<user_id>
 ```
 Example:
-http://localhost:80/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
+http://localhost:5000/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
 
 Or using curl:
 ```bash
-curl http://localhost:80/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
+curl http://localhost:5000/recommend/00000055a78bf6735c4a89358fab1de34104c3cb
 ```
 You should see a response:
 ```json
