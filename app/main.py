@@ -93,7 +93,7 @@ user_data = get_data(data_path)
 user_data = user_data.set_index('user_id')
 user_predictions = generate_user_model(user_data)
 
-logger.info("Generating user predictions")
+logger.info("Generating tag predictions")
 tag_data = get_data(data_path)
 tag_similarities = generate_tag_model(tag_data)
 tag_data = tag_data.set_index('tag_id')
@@ -112,7 +112,7 @@ def get_user_recommended_tags(user_id):
 
 @app.route('/predict-tag/<string:tag_id>')
 def get_tag_recommended_tags(tag_id):
-    # Check that user exists:
+    # Check that tag exists:
     try:
         tag_data.loc[tag_id]
     except:
