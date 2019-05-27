@@ -29,7 +29,8 @@ Requires that you have setup Docker and running.
 Simple run the command to build and deploy:
 
 ```docker
-docker build -t recommender-image . && docker run -p 5000:80 --name recommender recommender-image 
+docker build -t recommender-image . 
+docker run -p 5000:80 --name recommender recommender-image 
 ```
 
 ## Testing the application
